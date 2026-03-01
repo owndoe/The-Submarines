@@ -24,6 +24,6 @@ public:
 
     void Move(float dx, float dy);
     Point GetPos() const { return pos; }
-    int GetBattery() const { return battery; }
-    int GetOxygen() const { return oxygen; }
+    float GetBattery() const { return battery; }
+    float GetOxygen() const { return oxygen; }
 };
