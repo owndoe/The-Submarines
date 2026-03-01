@@ -1,5 +1,5 @@
 #pragma once
-
+#include <cmath>
 #include <iostream>
 
 struct Point {
@@ -9,11 +9,11 @@ struct Point {
 class Submarine {
 private:
     Point pos;
-    int battery;
-    int oxygen;
+    float battery;
+    float oxygen;
 
 public:
-    Submarine() :pos({ 0,0 }), battery(100), oxygen(100) {}
+    Submarine() : pos({ 0, 0 }), battery(100.f), oxygen(100.f) {}
 
     void ShowStatus() {
         std::cout << "--- [ 시스템 상태 ] ---" << std::endl;
@@ -22,5 +22,8 @@ public:
         std::cout << "-----------------------" << std::endl;
     }
 
-    void Move(int dx, int dy);
+    void Move(float dx, float dy);
+    Point GetPos() const { return pos; }
+    int GetBattery() const { return battery; }
+    int GetOxygen() const { return oxygen; }
 };
